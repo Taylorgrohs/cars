@@ -43,6 +43,7 @@ public class Program
 {
   public static void Main()
   {
+
     Car firstCar = new Car();
     firstCar.SetMakeModel("2014 Porsche 911");
     firstCar.SetPrice(114991);
@@ -83,12 +84,19 @@ public class Program
       }
     }
 
-
-    foreach(Car automobile in CarsMatchingSearch)
+    if(CarsMatchingSearch.Count != 0)
     {
-      Console.WriteLine(automobile.GetMakeModel());
-      Console.WriteLine("Price: $" + automobile.GetPrice());
-      Console.WriteLine("Miles: " + automobile.GetMiles());
+      foreach(Car automobile in CarsMatchingSearch)
+      {
+
+        Console.WriteLine(automobile.GetMakeModel());
+        Console.WriteLine("Price: $" + automobile.GetPrice());
+        Console.WriteLine("Miles: " + automobile.GetMiles());
+      }
+    }
+    else
+    {
+        Console.WriteLine("Sorry no matches found");
     }
   }
 }
